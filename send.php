@@ -1,18 +1,36 @@
-<?php 
+	<?php
+		$servername = "localhost";
+		$username   = "root";
+		$password   = "root";
+		$dbname     = "contact";
 
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-	$message = $_POST['message'];
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+		// Check connection
+		if (!$conn) {
+		    die("Connection failed: " . mysqli_connect_error());
+		}
 
 
+	//***********************************
 
-	$to = "nora.arhzane@student.kyh.se";
-	$subject = "Kontakt förfrågan";
-	$body = "This is an automated message. Please don't reply to this email. \n\n $request";
+	
+	$sql = "INSERT INTO formular (name, email, phone, message)
+	        VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[message]')";
 
-	mail ($to, $subject, $body);
 
-	echo "Meddelande skickat! <a href='kontakt.php'>Klicka här</a> för att skicka ett till meddelande";
+	if (mysqli_query($conn, $sql)) {
+		echo "Meddelande Skickat ! ";
+	} else {
+	    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+
+  //  Do some form processing here
+  echo '<a href="kontakt.php">Skicka ett till meddelande</a>.';
+
+	 
+	mysqli_close($conn)
 
 ?>

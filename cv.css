@@ -1,0 +1,7 @@
+.random, .new {
+	border: solid black 1px;
+	max-width: 50%;
+	text-align: center;
+	margin: 20px auto;
+	padding: 20px;
+}
