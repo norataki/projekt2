@@ -56,7 +56,6 @@ form label {
 	padding-top: 5px;
 }
 
-
 video {
 	max-width: 100%;
   padding: 2%;	
@@ -68,15 +67,14 @@ video {
     padding: 10px;
 }
 
-
 .about {
-  padding: 2%;
   margin: 2%;
   min-width: 50%;
 }
 #piccu {
   border: 0.5px solid grey;
   padding: 3%;
+  margin-top: 6%;
 }
 .cv {
   border: 2px solid grey;

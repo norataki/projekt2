@@ -17,10 +17,10 @@
 	//*********************************** Security ******************* //
 		//adds a backslash before certain potentially dangerous characters in a string passed in to the function. Prevents SQL-injections.
 
-	$name = mysql_real_escape_string($_POST['name']);
-	$email = mysql_real_escape_string($_POST['email']);
-	$phone = mysql_real_escape_string($_POST['phone']);
-	$message = mysql_real_escape_string($_POST['message']);	
+	$name = mysqli_real_escape_string($_POST['name']);
+	$email = mysqli_real_escape_string($_POST['email']);
+	$phone = mysqli_real_escape_string($_POST['phone']);
+	$message = mysqli_real_escape_string($_POST['message']);	
 
 	
 	//skickar informationen till databasen 

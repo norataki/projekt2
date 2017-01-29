@@ -8,8 +8,8 @@
 	//prevent mysql injection
 	$username = stripcslashes($username);
 	$password = stripcslashes($password);
-	$username = mysql_real_escape_string($username);
-	$password = mysql_real_escape_string($password);
+	$username = mysqli_real_escape_string($username);
+	$password = mysqli_real_escape_string($password);
 
 	// connect to the server and select database
 	mysql_connect("localhost", "root", "root");
@@ -25,7 +25,6 @@
 		<nav class='navbar navbar-default'>
 			<ul class='nav navbar-nav'>
 					<li><a href='index.php?p=textadmin'>Textadmin</a></li> 
-					<li><a href='index.php?p=imageadmin'>Bildadmin</a></li>
 					<li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span>Logga ut</a></li>
 			</ul>
 		</nav>
